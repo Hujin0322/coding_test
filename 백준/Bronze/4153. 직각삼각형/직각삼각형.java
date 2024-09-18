@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,22 +6,16 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         while (true) { 
-            String[] list = sc.nextLine().split(" ");
-            int[] num = new int[list.length];
-
-            for (int i=0;i<list.length;i++){
-                num[i] = Integer.parseInt(list[i]);
-            }
-            Arrays.sort(num);
-            int a = (int) Math.pow(num[0],2);
-            int b = (int) Math.pow(num[1],2);
-            int c = (int) Math.pow(num[2],2);
+            int a = (int) Math.pow(sc.nextInt(), 2);
+            int b = (int) Math.pow(sc.nextInt(), 2);
+            int c = (int) Math.pow(sc.nextInt(), 2);
 
             if(a==0) break;
-            else if(a+b==c){
-                System.out.println("right");
-            }else{System.out.println("wrong");}
+
+            int[] arr = {a,b,c};
+            Arrays.sort(arr);
+
+            System.out.println(arr[0]+arr[1]==arr[2]?"right":"wrong");
         }
     }
-
 }   
