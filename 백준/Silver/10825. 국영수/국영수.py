@@ -1,11 +1,12 @@
-N = int(input())
+n = int(input())
+s = []
 
-arr = []
-for _ in range(N):
-    name, *scores = input().split()
-    arr.append((name, *map(int, scores)))
+for _ in range(n):
+    n, k, e, m = input().split()
+    s.append((n, int(k), int(e), int(m)))
 
-arr.sort(key=lambda x : (-x[1], x[2], -x[3], x[0]))
+# 정렬 기준: 국어(내림차순), 영어(오름차순), 수학(내림차순)
+s.sort(key=lambda x: (-x[1], x[2], -x[3], x[0]))
 
-for st in arr:
-    print(st[0])
+for ss in s:
+    print(ss[0])
