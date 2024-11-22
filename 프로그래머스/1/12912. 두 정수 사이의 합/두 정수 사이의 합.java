@@ -1,15 +1,9 @@
 class Solution {
+
     public long solution(int a, int b) {
-        long answer = 0;
-        int num = 0;
-        if (a>=b){
-            num = a;
-            a = b;
-            b = num;
-        }
-        for (int i = a; i <= b; i++) {
-            answer += i;
-        }
+     	int a1 = Math.min(a, b);
+		int b1 = Math.max(a, b);
+        long answer = (long) (b1 - a1 + 1) * (a1 + b1) / 2;
         return answer;
     }
 }
