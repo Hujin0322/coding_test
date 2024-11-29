@@ -1,9 +1,6 @@
 class Solution {
     public long solution(int price, int money, int count) {
-        long total = 0;
-        for (int i = 1; i <= count; i++) {
-            total += price * i;
-        }
+        long total = (long) count * price * (count + 1) / 2;
         long answer = total - money;
         return (answer > 0)? answer : 0;
     }
