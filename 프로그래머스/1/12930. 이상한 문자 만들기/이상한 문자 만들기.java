@@ -1,21 +1,16 @@
 class Solution {
     public String solution(String s) {
         StringBuilder answer = new StringBuilder();
-        int index = 0; 
+        int cnt = 0; 
+        String[] array = s.split("");
 
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-
-            if (c == ' ') {
-                answer.append(c);
-                index = 0; 
+        for (String ss : array) {
+            if (ss.equals(" ")) {
+                cnt = 0;
+                answer.append(" ");
             } else {
-                if (index % 2 == 0) {
-                    answer.append(Character.toUpperCase(c));
-                } else {
-                    answer.append(Character.toLowerCase(c));
-                }
-                index++;
+                cnt++;
+                answer.append(cnt % 2 == 0 ? ss.toLowerCase() : ss.toUpperCase());
             }
         }
 
