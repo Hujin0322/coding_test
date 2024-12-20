@@ -1,11 +1,8 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.TreeSet;
 
 class Solution {
-    public List<Integer> solution(int[] numbers) {
-        Set<Integer> set = new HashSet<>();
+    public TreeSet<Integer> solution(int[] numbers) {
+        TreeSet<Integer> set = new TreeSet<>();
 
         for (int i = 0; i < numbers.length; i++) {
             for (int j = i+1; j < numbers.length; j++) {
@@ -15,10 +12,6 @@ class Solution {
                 }
             }
         }
-
-        List<Integer> answer = new ArrayList<>(set);
-        answer.sort(Integer::compareTo);
-
-        return answer;
+        return set;
     }
 }
